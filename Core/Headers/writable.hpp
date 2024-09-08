@@ -1,11 +1,11 @@
 #ifndef WRITABLE
 #define WRITABLE
-#endif
 
 #include <string>
-#pragma once
 
-    class Writable{
+class Writable{
     public:
-        virtual std::string ToString();
+        virtual std::string ToString()const = 0;
 };
+
+#endif
