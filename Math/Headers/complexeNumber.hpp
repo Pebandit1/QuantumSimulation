@@ -2,26 +2,28 @@
 #define COMPLEXE_NB
 #endif
 
+#pragma once
 #include <cstdint>
-#include "Core\Headers\writable.hpp"
+#include "../../Core/Headers/Writable.hpp"
+#include <string>
 
-namespace Math::Headers{
-    class ComplexeNumber : public Core::Headers::Writable
+class ComplexeNumber : public Writable
 {
-private:
-    double m_realPart; 
-    double m_imaginaryPart;
-    void SetAll(double real, double imaginary);
-public:
-    ComplexeNumber(double real, double imaginary);
-    ComplexeNumber();
-    ComplexeNumber(const ComplexeNumber& other);
-    ~ComplexeNumber();
+    private:
+        double m_realPart; 
+        double m_imaginaryPart;
+        void SetAll(double real, double imaginary);
+    public:
+        ComplexeNumber();
+        ComplexeNumber(double real, double imaginary);
+        ComplexeNumber(const ComplexeNumber& other);
+        ~ComplexeNumber();
 
-    void SetRealPart(double real);
-    double GetRealPart();
+        void SetRealPart(double real);
+        double GetRealPart();
 
-    void SetImaginaryPart(double imaginary);
-    double GetImaginaryPart();
+        void SetImaginaryPart(double imaginary);
+        double GetImaginaryPart();
+
+        virtual std::string ToString();
 };
-}
